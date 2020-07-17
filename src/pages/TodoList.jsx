@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 
 import Paper from "../components/Paper";
 import Header from "../components/Header";
@@ -6,13 +6,25 @@ import TodoForm from "../components/TodoForm";
 import Todos from "../components/Todos";
 
 const TodoList = () => {
+  const [todos, setTodos] = useState([
+    { text: "Learning Reacts!" },
+    { text: "Learning Hook Reacts!" },
+    { text: "Learning Styling In Reacts!" }
+  ]);
+
+  const addTodo = value => {
+    const addedTodo = [...todos, { text: value }];
+
+    setTodos(addedTodo);
+  };
+
+  console.log("todos", todos);
+
   return (
-    // paper disini menggantikan div class container dan frame
-    // yang di link dari Paper.jsx
     <Paper>
       <Header />
-      <TodoForm />
-      <Todos />
+      <TodoForm addTodo={addTodo} />
+      <Todos todos={todos} />
     </Paper>
   );
 };
