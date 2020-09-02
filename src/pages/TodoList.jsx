@@ -12,19 +12,23 @@ const TodoList = () => {
     { text: "Learning styling in React!" }
   ]);
 
+  const [showAdd, setShowAdd] = useState(false);
+
   const addTodo = (value) => {
     const addedTodo = [...todos, { text: value }];
 
     setTodos(addedTodo);
   };
 
-  console.log("todos", todos);
+  const showAddToggle = () => setShowAdd(!showAdd);
+
+  console.log(showAdd);
 
   return (
     // paper disini menggantikan div class container dan frame
     // yang di link dari Paper.jsx
     <Paper>
-      <Header />
+      <Header showAddToggle={showAddToggle} />
       <TodoForm addTodo={addTodo} />
       <Todos todos={todos} />
     </Paper>
