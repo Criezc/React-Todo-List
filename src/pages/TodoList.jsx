@@ -7,23 +7,17 @@ import Todos from "../components/Todos";
 
 const TodoList = () => {
   const [todos, setTodos] = useState([
-    { text: "Learning Reacts!" },
-    { text: "Learning Hook Reacts!" },
-    { text: "Learning Styling In Reacts!" }
+    { text: "Learning React!" },
+    { text: "Learning React Hooks!" },
+    { text: "Learning styling in React!" }
   ]);
 
-  const addTodo = value => {
-    const addedTodo = [...todos, { text: value }];
-
-    setTodos(addedTodo);
-  };
-
-  console.log("todos", todos);
-
   return (
+    // paper disini menggantikan div class container dan frame
+    // yang di link dari Paper.jsx
     <Paper>
       <Header />
-      <TodoForm addTodo={addTodo} />
+      <TodoForm />
       <Todos todos={todos} />
     </Paper>
   );
