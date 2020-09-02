@@ -4,7 +4,7 @@ import PropTypes from "prop-types";
 const TodoForm = ({ addTodo }) => {
   const [value, setValue] = useState("");
 
-  const handleFormSubmit = e => {
+  const handleFormSubmit = (e) => {
     e.preventDefault();
 
     if (!value) {
@@ -23,7 +23,7 @@ const TodoForm = ({ addTodo }) => {
           type="text"
           className="add-input"
           value={value}
-          onChange={e => setValue(e.target.value)}
+          onChange={(e) => setValue(e.target.value)}
         />
         <button className="add-btn main-black-color">Add</button>
       </form>

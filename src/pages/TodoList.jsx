@@ -12,12 +12,20 @@ const TodoList = () => {
     { text: "Learning styling in React!" }
   ]);
 
+  const addTodo = (value) => {
+    const addedTodo = [...todos, { text: value }];
+
+    setTodos(addedTodo);
+  };
+
+  console.log("todos", todos);
+
   return (
     // paper disini menggantikan div class container dan frame
     // yang di link dari Paper.jsx
     <Paper>
       <Header />
-      <TodoForm />
+      <TodoForm addTodo={addTodo} />
       <Todos todos={todos} />
     </Paper>
   );
