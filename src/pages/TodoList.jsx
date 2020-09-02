@@ -28,8 +28,8 @@ const TodoList = () => {
     // paper disini menggantikan div class container dan frame
     // yang di link dari Paper.jsx
     <Paper>
-      <Header showAddToggle={showAddToggle} />
-      <TodoForm addTodo={addTodo} />
+      <Header showAddToggle={showAddToggle} showAdd={showAdd} />
+      <TodoForm addTodo={addTodo} showAdd={showAdd} />
       <Todos todos={todos} />
     </Paper>
   );
