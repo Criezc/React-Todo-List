@@ -22,7 +22,6 @@ class Header extends React.Component {
       <section className="header-component">
         <Container alignItems="flex-start">
           <Item flex={1}>
-            23
             <Button
               text={showAdd ? "Finish" : "Add"}
               onClick={showAddToggle}
