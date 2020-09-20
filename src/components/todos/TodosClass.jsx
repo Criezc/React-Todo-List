@@ -2,7 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import Todo from "../todo/TodoClass";
 import styled from "@emotion/styled";
-import Container from "../../layout/Container";
+import Container from "../../layout/ContainerClass";
 
 const StyledTodoPlaceholderText = styled.div`
   font-family: "Homemade Apple", sans-serif;

@@ -5,17 +5,32 @@ import Header from "../components/header/HeaderClass";
 import TodoForm from "../components/todoform/TodoformClass";
 import Todos from "../components/todos/TodosClass";
 
-import Container from "../layout/Container";
+import Container from "../layout/ContainerClass";
 
 class TodoList extends React.Component {
   state = {
-    todos: [
-      { text: "Learning React!", isCompleted: false },
-      { text: "Learning React Hooks!", isCompleted: false },
-      { text: "Learning styling in React!", isCompleted: false }
-    ],
+    todos: [],
     showAdd: false
   };
+
+  componentDidMount() {
+    const todoStateLocalStorage =
+      JSON.parse(localStorage.getItem("todos")) || [];
+
+    const showAddStateLocalStorage =
+      JSON.parse(localStorage.getItem("showAdd")) || false;
+
+    this.setState({
+      todos: todoStateLocalStorage,
+      showAdd: showAddStateLocalStorage
+    });
+  }
+
+  componentDidUpdate() {
+    const { todos, showAdd } = this.state;
+    localStorage.setItem("todos", JSON.stringify(todos));
+    localStorage.setItem("showAdd", JSON.stringify(showAdd));
+  }
 
   addTodo = (value) => {
     const { todos } = this.state;

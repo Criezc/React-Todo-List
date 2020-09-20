@@ -10,7 +10,6 @@ import Container from "../layout/Container";
 
 const TodoList = () => {
   const [todos, setTodos] = useStateWithLocalStorage("todos");
-
   const [showAdd, setShowAdd] = useState(false);
 
   const addTodo = (value) => {
