@@ -1,20 +1,15 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
+import useStateWithLocalStorage from "../hooks/useStateWithLocalStorage";
 
-import Paper from "../components/paper/PaperClass";
-import Header from "../components/header/HeaderClass";
-import TodoForm from "../components/todoform/TodoformClass";
-import Todos from "../components/todos/TodosClass";
+import Paper from "../components/paper/Paper";
+import Header from "../components/header/Header";
+import TodoForm from "../components/todoform/TodoForm";
+import Todos from "../components/todos/Todos";
 
 import Container from "../layout/Container";
 
 const TodoList = () => {
-  // const [todos, setTodos] = useState([
-  //   { text: "Learning React!", isCompleted: false },
-  //   { text: "Learning React Hooks!", isCompleted: false },
-  //   { text: "Learning styling in React!", isCompleted: false }
-  // ]);
-
-  const [todos, setTodos] = useState(localStorage.getItem("todos") || []);
+  const [todos, setTodos] = useStateWithLocalStorage("todos");
 
   const [showAdd, setShowAdd] = useState(false);
 
